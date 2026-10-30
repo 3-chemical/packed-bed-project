@@ -1,6 +1,6 @@
 import os
 
-code = """
+
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
@@ -185,6 +185,6 @@ with tab4:
         st.success("✅ [검증 완료 / Verification Passed] 상대오차가 1.0% 이내로 수치 엔진의 타당성이 완벽히 입증되었습니다.")
     else:
         st.warning("⚠️ 상대오차가 1.0% 이상입니다. 입력 매개변수 또는 계산 수식을 재확인하십시오.")
-"""
+
 
 
