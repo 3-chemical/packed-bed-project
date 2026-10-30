@@ -187,16 +187,4 @@ with tab4:
         st.warning("⚠️ 상대오차가 1.0% 이상입니다. 입력 매개변수 또는 계산 수식을 재확인하십시오.")
 """
 
-with open('app.py', 'w') as f:
-    f.write(code)
 
-!pip install -q streamlit pandas matplotlib
-!wget -q -O cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
-!chmod +x cloudflared
-
-import subprocess, time
-subprocess.Popen(["streamlit", "run", "app.py"])
-time.sleep(3)
-
-print("👇 [디테일 완벽 보완] Streamlit Web App 터널 링크입니다:")
-!./cloudflared tunnel --url http://localhost:8501 2>&1 | grep -o 'https://.*\.trycloudflare\.com'
